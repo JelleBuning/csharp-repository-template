@@ -44,7 +44,7 @@
 ## About The Project
 
 This is a generic template for your next project. To get started, simply perform a **Search and Replace** in your editor for the following variables:
-* `github_username`
+* `github_user`
 * `repo_name`
 * `project_title`
 * `project_description`
