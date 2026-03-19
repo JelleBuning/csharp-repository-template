@@ -11,9 +11,9 @@
   <p align="center">
     project_description
     <br />
-    <a href="https://github.com/github_username/repository_name/issues">Report Bug</a>
+    <a href="https://github.com/github_user/repository_name/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repository_name/issues">Request Feature</a>
+    <a href="https://github.com/github_user/repository_name/issues">Request Feature</a>
   </p>
 </div>
 
