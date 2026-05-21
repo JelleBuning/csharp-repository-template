@@ -1,3 +1,7 @@
+---
+applyTo: "**/*.Tests/**/*.cs, **/*Tests.cs, **/*Specs.cs"
+---
+
 # Testing Strategy
 - Unit tests: Business logic.
 - Integration tests: Persistence/HTTP layers.

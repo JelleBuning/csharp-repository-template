@@ -1,3 +1,7 @@
+---
+applyTo: "**/*.cs"
+---
+
 # Architecture: Clean / Onion
 - Domain: entities, value objects, domain services, events (no infrastructure dependencies).
 - Application: use-cases, orchestration, ports (interfaces), DTOs, handlers.

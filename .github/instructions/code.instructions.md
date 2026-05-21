@@ -1,3 +1,7 @@
+---
+applyTo: "**/*.cs"
+---
+
 # Coding Standards
 - Modern C#: Use records, pattern matching, init-only properties.
 - Immutability: Prefer by default.
