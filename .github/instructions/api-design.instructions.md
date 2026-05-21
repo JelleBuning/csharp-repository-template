@@ -7,6 +7,7 @@ applyTo: "**/*.cs"
 ## RESTful Conventions
 
 ### Resource Naming
+
 Use **nouns** (not verbs) for resources, actions via HTTP methods:
 
 ```csharp
@@ -25,6 +26,7 @@ POST   /api/v1/deleteUser
 ```
 
 ### HTTP Methods
+
 - **GET**: Retrieve data (safe, idempotent)
 - **POST**: Create new resource (not idempotent)
 - **PUT**: Replace entire resource (idempotent)
@@ -34,6 +36,7 @@ POST   /api/v1/deleteUser
 - **OPTIONS**: Describe communication options
 
 ### Status Codes
+
 - **2xx Success**
   - 200 OK: Successful GET, PUT, PATCH
   - 201 Created: POST created resource

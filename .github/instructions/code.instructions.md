@@ -3,6 +3,7 @@ applyTo: "**/*.cs"
 ---
 
 # Coding Standards
+
 - **Modern C#**: Use records, pattern matching, and init-only properties where appropriate.
 - **Immutability**: Use `record`/`record struct` for DTOs and Value Objects. Use `init`-only setters on entities. Never expose public setters on domain objects.
 - **Collections**: Use `IReadOnlyList<T>` or `IReadOnlyCollection<T>` for public API return types.
@@ -12,6 +13,7 @@ applyTo: "**/*.cs"
 # Patterns & Error Handling
 
 ## Design Patterns
+
 Apply patterns intentionally with a clear reason:
 - Behavior varies by type/condition → **Strategy**
 - Object creation is complex or conditional → **Factory**
@@ -27,9 +29,11 @@ Expected failures (validation, business rule violations, not found) should be mo
 - `ErrorOr<T>` makes error handling explicit and composable.
 
 ### Handler Pattern
+
 Implement handlers that return `ErrorOr<T>` from domain/application operations.
 
 ### Error Types
+
 - `Error.Validation(code, description)` — Input validation failure
 - `Error.NotFound(code, description)` — Resource not found
 - `Error.Conflict(code, description)` — Business rule violation
@@ -38,28 +42,21 @@ Implement handlers that return `ErrorOr<T>` from domain/application operations.
 - `Error.Failure(code, description)` — Generic error
 
 ### Pattern Matching
+
 Handle both success and failure cases using pattern matching (.Match() or MatchAsync() methods).
 
-### Chaining
-Chain dependent operations:
-```csharp
-var pdfResult = await _pdfService.GenerateAsync(order);
-if (pdfResult.IsError)
-    return pdfResult.Errors;
-
-var invoice = new Invoice(order, pdfResult.Value);
-return invoice;
-```
-
 ### Exception Handling
+
 - Throw exceptions only for truly exceptional, unrecoverable conditions.
 - Never use exceptions for control flow (validation, not found, conflicts).
 
 ## General Guidelines
+
 - Do not introduce new NuGet packages without explicit approval.
 - Do not use `static` classes or methods unless absolutely necessary.
 
 # Performance
+
 - No micro-optimization unless profiling has identified a bottleneck.
 - Use `Span<T>` only when justified by measurable performance needs and it remains readable.
 - For async streams, see `.github/skills/csharp-async/SKILL.md`.
